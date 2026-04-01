@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>May the Fourth Be With You | 8-Week Group Coaching Program</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0f1a;
+    color: #e8ecf4;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  section {
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.4em;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8em;
+  }
+
+  h3 {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    color: #e8ecf4;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    line-height: 1.7;
+    color: #b8c4db;
+    margin-bottom: 1em;
+  }
+
+  .accent { color: #4f8fff; }
+  .green { color: #34d399; }
+  .gold { color: #fbbf24; }
+  .pink { color: #f472b6; }
+  .white { color: #ffffff; }
+
+  .divider {
+    width: 50px;
+    height: 3px;
+    background: #4f8fff;
+    border-radius: 3px;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .tag {
+    display: inline-block;
+    background: rgba(79,143,255,0.15);
+    color: #4f8fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35em 0.9em;
+    border-radius: 20px;
+    margin-bottom: 1em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .tag-green {
+    background: rgba(52,211,153,0.15);
+    color: #34d399;
+  }
+
+  .tag-gold {
+    background: rgba(251,191,36,0.15);
+    color: #fbbf24;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+
+  .hero .subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: #7b8db5;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
+
+  .hero .location {
+    font-size: 0.95rem;
+    color: #4f8fff;
+    font-weight: 500;
+    margin-bottom: 0.3em;
+  }
+
+  .hero .spots {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: #94a3c4;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  /* Cost table */
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  .cost-table th,
+  .cost-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .cost-table th {
+    color: #7b8db5;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cost-table td { color: #b8c4db; }
+  .cost-table td:last-child { text-align: right; font-weight: 600; color: #f472b6; }
+
+  .cost-table tr.total td {
+    color: #e8ecf4;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-top: 2px solid rgba(244,114,182,0.3);
+    border-bottom: none;
+  }
+
+  .cost-table tr.total td:last-child { color: #f472b6; font-size: 1.1rem; }
+
+  /* Calculator */
+  .calculator {
+    background: rgba(251,191,36,0.05);
+    border: 1px solid rgba(251,191,36,0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calc-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #b8c4db;
+    margin-bottom: 0.4em;
+  }
+
+  .calc-field input[type="range"] {
+    width: 100%;
+    accent-color: #fbbf24;
+    margin-bottom: 0.3em;
+  }
+
+  .calc-field .value-display {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fbbf24;
+  }
+
+  .calc-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .calc-result-item {
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+  }
+
+  .calc-result-item .label {
+    font-size: 0.8rem;
+    color: #7b8db5;
+    font-weight: 500;
+    margin-bottom: 0.3em;
+    text-transform: none;
+    letter-spacing: 0;
+    display: block;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .calc-result-item .amount {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .calc-result-item .amount.loss { color: #f472b6; }
+  .calc-result-item .amount.gain { color: #34d399; }
+  .calc-result-item .amount.cost { color: #fbbf24; }
+
+  .calc-roi {
+    margin-top: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    background: rgba(52,211,153,0.08);
+    border: 1px solid rgba(52,211,153,0.2);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .calc-roi .roi-label {
+    font-size: 0.85rem;
+    color: #94a3c4;
+    margin-bottom: 0.3em;
+  }
+
+  .calc-roi .roi-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #34d399;
+  }
+
+  .calc-roi .roi-desc {
+    font-size: 0.9rem;
+    color: #8a9bbd;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
+
+  /* Deliverable cards */
+  .deliverable-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .deliverable {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    transition: border-color 0.2s;
+  }
+
+  .deliverable:hover {
+    border-color: rgba(79,143,255,0.2);
+  }
+
+  .deliverable .number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4f8fff;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3em;
+  }
+
+  .deliverable h3 { margin-bottom: 0.3em; }
+
+  .deliverable p {
+    font-size: 0.95rem;
+    color: #8a9bbd;
+    margin-bottom: 0;
+    line-height: 1.55;
+  }
+
+  /* Bonus cards */
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .bonus-card {
+    border-radius: 16px;
+    padding: 1.6rem;
+  }
+
+  .bonus-card.bonus-1on1 {
+    background: rgba(52,211,153,0.06);
+    border: 1px solid rgba(52,211,153,0.18);
+  }
+
+  .bonus-card.bonus-retreat {
+    background: rgba(251,191,36,0.06);
+    border: 1px solid rgba(251,191,36,0.18);
+  }
+
+  .bonus-card .bonus-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6em;
+  }
+
+  .bonus-card.bonus-1on1 .bonus-label { color: #34d399; }
+  .bonus-card.bonus-retreat .bonus-label { color: #fbbf24; }
+
+  .bonus-card h3 { margin-bottom: 0.5em; }
+
+  .bonus-card p {
+    font-size: 0.95rem;
+    color: #8a9bbd;
+    margin-bottom: 0;
+    line-height: 1.55;
+  }
+
+  /* Fit section */
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .fit-column h3 {
+    margin-bottom: 0.8em;
+    font-size: 1.1rem;
+  }
+
+  .fit-column.fit-yes h3 { color: #34d399; }
+  .fit-column.fit-no h3 { color: #f472b6; }
+
+  .fit-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .fit-column li {
+    font-size: 0.95rem;
+    color: #8a9bbd;
+    line-height: 1.5;
+    margin-bottom: 0.6em;
+    padding-left: 1.4em;
+    position: relative;
+  }
+
+  .fit-column.fit-yes li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: #34d399;
+    font-weight: 700;
+  }
+
+  .fit-column.fit-no li::before {
+    content: "\2717";
+    position: absolute;
+    left: 0;
+    color: #f472b6;
+    font-weight: 700;
+  }
+
+  /* Video embed */
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 1.5rem 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Results cards */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .result-card {
+    background: rgba(79,143,255,0.05);
+    border: 1px solid rgba(79,143,255,0.12);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+  }
+
+  .result-card .name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #e8ecf4;
+    margin-bottom: 0.15em;
+  }
+
+  .result-card .industry {
+    font-size: 0.8rem;
+    color: #5a6a8a;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+  }
+
+  .result-card .before {
+    font-size: 0.85rem;
+    color: #7b8db5;
+    margin-bottom: 0.4em;
+    line-height: 1.4;
+  }
+
+  .result-card .after {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #34d399;
+    line-height: 1.4;
+  }
+
+  .aggregate {
+    background: rgba(52,211,153,0.06);
+    border: 1px solid rgba(52,211,153,0.15);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .aggregate p {
+    color: #94a3c4;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .aggregate strong { color: #34d399; }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding: 0.9rem 1.2rem;
+    background: rgba(255,255,255,0.025);
+    border-radius: 12px;
+    border-left: 3px solid #4f8fff;
+  }
+
+  .timeline-item .phase {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #4f8fff;
+    white-space: nowrap;
+    min-width: 90px;
+    padding-top: 2px;
+    letter-spacing: 0.03em;
+  }
+
+  .timeline-item .focus {
+    font-weight: 600;
+    color: #e8ecf4;
+    font-size: 1rem;
+  }
+
+  .timeline-item .desc {
+    font-size: 0.95rem;
+    color: #8a9bbd;
+    line-height: 1.5;
+  }
+
+  /* Pricing */
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .pricing-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .pricing-card.featured {
+    background: rgba(79,143,255,0.08);
+    border-color: rgba(79,143,255,0.25);
+  }
+
+  .pricing-card .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7b8db5;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6em;
+  }
+
+  .pricing-card .price {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #e8ecf4;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3em;
+  }
+
+  .pricing-card.featured .price { color: #4f8fff; }
+
+  .pricing-card .detail {
+    font-size: 0.85rem;
+    color: #7b8db5;
+  }
+
+  .pricing-math {
+    margin-top: 1.5rem;
+    padding: 1.3rem 1.5rem;
+    background: rgba(251,191,36,0.05);
+    border: 1px solid rgba(251,191,36,0.12);
+    border-radius: 14px;
+  }
+
+  .pricing-math p {
+    color: #b8c4db;
+    margin-bottom: 0.4em;
+    font-size: 0.95rem;
+  }
+
+  .pricing-math p:last-child { margin-bottom: 0; }
+  .pricing-math strong { color: #fbbf24; }
+
+  /* FAQ */
+  .faq-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item .question {
+    font-weight: 600;
+    color: #e8ecf4;
+    font-size: 1.05rem;
+    margin-bottom: 0.4em;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    color: #8a9bbd;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .testimonial {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1.5rem 1.6rem;
+  }
+
+  .testimonial blockquote {
+    font-size: 0.95rem;
+    color: #b8c4db;
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 0.8em;
+  }
+
+  .testimonial .attribution {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e8ecf4;
+  }
+
+  .testimonial .attribution .industry {
+    font-weight: 400;
+    color: #5a6a8a;
+    font-size: 0.85rem;
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #4f8fff;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    margin: 1.5rem 0;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .cta-button:hover {
+    background: #3a7aee;
+    transform: translateY(-1px);
+  }
+
+  .cta .closing {
+    font-size: 1rem;
+    color: #5a6a8a;
+    margin-top: 1rem;
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: #fff; color: #1a1a2e; }
+    .container { padding: 1rem; max-width: 100%; }
+    section { margin-bottom: 2rem; break-inside: avoid; }
+
+    .tag, .tag-green, .tag-gold { background: #eef2ff; color: #3b5998; }
+    .accent { color: #2563eb; }
+    .green { color: #059669; }
+    .gold { color: #d97706; }
+    .pink { color: #db2777; }
+    .white { color: #1a1a2e; }
+
+    p, .deliverable p, .faq-item p, .timeline-item .desc, .result-card .before,
+    .bonus-card p, .fit-column li, .testimonial blockquote {
+      color: #4a4a6a;
+    }
+
+    h1, h2, h3, .deliverable h3, .result-card .name, .faq-item .question,
+    .timeline-item .focus, .pricing-card .price, .testimonial .attribution { color: #1a1a2e; }
+
+    .hero .subtitle, .pricing-card .label, .pricing-card .detail,
+    .cost-table th, .deliverable .number, .timeline-item .phase,
+    .result-card .industry, .testimonial .attribution .industry { color: #6b7280; }
+
+    .divider { background: #2563eb; }
+
+    .deliverable, .pricing-card, .pricing-math, .aggregate, .testimonial, .calculator {
+      border-color: #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .pricing-card.featured { background: #eef2ff; border-color: #bfdbfe; }
+
+    .result-card { background: #f0f9ff; border-color: #bae6fd; }
+    .result-card .after { color: #059669; }
+
+    .bonus-card { border-color: #e5e7eb; background: #f9fafb; }
+    .bonus-card.bonus-1on1 .bonus-label { color: #059669; }
+    .bonus-card.bonus-retreat .bonus-label { color: #d97706; }
+
+    .fit-column.fit-yes h3 { color: #059669; }
+    .fit-column.fit-no h3 { color: #db2777; }
+    .fit-column.fit-yes li::before { color: #059669; }
+    .fit-column.fit-no li::before { color: #db2777; }
+
+    .timeline-item { background: #f9fafb; border-left-color: #2563eb; }
+
+    .cost-table td:last-child, .cost-table tr.total td:last-child { color: #db2777; }
+    .cost-table th, .cost-table td { border-bottom-color: #e5e7eb; }
+    .cost-table tr.total td { border-top-color: #f9a8d4; }
+
+    .cta-button {
+      background: #2563eb;
+      color: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .aggregate strong { color: #059669; }
+    .pricing-math strong { color: #d97706; }
+
+    .video-container { display: none; }
+
+    .calc-result-item { background: #f3f4f6; border: 1px solid #e5e7eb; }
+    .calc-result-item .amount.loss { color: #db2777; }
+    .calc-result-item .amount.gain { color: #059669; }
+    .calc-result-item .amount.cost { color: #d97706; }
+    .calc-roi { background: #ecfdf5; border-color: #a7f3d0; }
+    .calc-roi .roi-value { color: #059669; }
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1.2rem 4rem; }
+    .pricing-cards { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr; }
+    .timeline-item { flex-direction: column; gap: 0.2rem; }
+    .bonus-grid { grid-template-columns: 1fr; }
+    .fit-grid { grid-template-columns: 1fr; }
+    .calc-results { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="tag">Launching May 4, 2026</div>
+    <h1>May the Fourth<br>Be With You</h1>
+    <p class="subtitle">8-Week Group Coaching Program</p>
+    <p class="location">Based in Toronto. Built for Canadian professionals.</p>
+    <p class="spots">10 spots. Founding cohort. The lowest price this will ever be.</p>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section>
+    <div class="tag">The Real Cost</div>
+    <h2>The Problem Nobody Talks About</h2>
+    <div class="divider"></div>
+
+    <p>Job searching is expensive. Not the $50 LinkedIn Premium or the $300 resume writer. The <strong class="white">real</strong> cost.</p>
+
+    <p><strong class="white">The average job search in Canada takes 5-6 months.</strong> For senior roles? Longer.</p>
+
+    <p>Every month you're searching is <strong class="pink">$5,000-$15,000 you're NOT earning.</strong> Three months of searching alone? That's $15K-$45K gone. Not in fees. In lost salary. In bills piling up. In confidence eroding.</p>
+
+    <p>And when you DO land something? Most people leave <strong class="pink">$5,000-$25,000 on the table</strong> because they don't know how to negotiate. Or they're so exhausted from the search that they take the first offer.</p>
+
+    <p>So let's be honest about what "doing it alone" actually costs:</p>
+
+    <table class="cost-table">
+      <thead>
+        <tr><th>What You Lose</th><th style="text-align:right;">Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>3 months of lost salary</td><td>$15,000 - $45,000</td></tr>
+        <tr><td>Not negotiating your offer</td><td>$5,000 - $25,000</td></tr>
+        <tr><td>Resume writers that don't work</td><td>$300 - $1,500</td></tr>
+        <tr><td>Your sanity</td><td>Priceless</td></tr>
+        <tr class="total"><td>Total cost of going alone</td><td>$20,000 - $70,000+</td></tr>
+      </tbody>
+    </table>
+
+    <p>The program costs <strong class="white">$2,497</strong>. That's $50/week for 8 weeks.</p>
+
+    <p>If it helps you land even <strong class="green">ONE month faster</strong>, it pays for itself 2-4x over. And that's before the salary negotiation.</p>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section>
+    <div class="tag tag-gold">Your Numbers</div>
+    <h2>What's Your Real Cost?</h2>
+    <div class="divider" style="background:#fbbf24;"></div>
+
+    <p>Plug in your salary. See what job searching is actually costing you.</p>
+
+    <div class="calculator">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Your target salary</label>
+          <input type="range" id="calcSalary" min="40000" max="300000" step="5000" value="100000">
+          <div class="value-display" id="calcSalaryDisplay">$100,000</div>
+        </div>
+        <div class="calc-field">
+          <label>Months you've been searching (or expect to search alone)</label>
+          <input type="range" id="calcMonths" min="1" max="12" step="1" value="3">
+          <div class="value-display" id="calcMonthsDisplay">3 months</div>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result-item">
+          <span class="label">Monthly cost of unemployment</span>
+          <div class="amount loss" id="calcMonthly">$8,333</div>
+        </div>
+        <div class="calc-result-item">
+          <span class="label">Total lost salary so far</span>
+          <div class="amount loss" id="calcTotalLost">$25,000</div>
+        </div>
+        <div class="calc-result-item">
+          <span class="label">Potential negotiation gain</span>
+          <div class="amount gain" id="calcNegGain">$12,500</div>
+        </div>
+        <div class="calc-result-item">
+          <span class="label">Program investment</span>
+          <div class="amount cost">$2,497</div>
+        </div>
+      </div>
+
+      <div class="calc-roi">
+        <div class="roi-label">If you land just 1 month faster + negotiate</div>
+        <div class="roi-value" id="calcROI">8x return</div>
+        <p class="roi-desc" id="calcDesc">You save $8,333 in lost salary + gain $12,500 in negotiation. That's $20,833 back on a $2,497 investment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section>
+    <div class="tag">What's Included</div>
+    <h2>What You Get</h2>
+    <div class="divider"></div>
+
+    <p>This isn't a course. There are no pre-recorded videos. No PDFs you'll never open. This is a <strong class="white">done-WITH-you program</strong> where I build your entire job search strategy alongside you.</p>
+
+    <div class="deliverable-grid">
+      <div class="deliverable">
+        <div class="number">01</div>
+        <h3>Done-For-You Resume Rewrite</h3>
+        <p>Your resume gets rebuilt from scratch with 15-20 quantified achievements in the CAR format (Challenge, Action, Result). Not "managed a team." More like "Led team of 5 that delivered $2M project 3 weeks early, saving $150K in contractor costs." The version that makes hiring managers stop scrolling.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">02</div>
+        <h3>LinkedIn Overhaul</h3>
+        <p>Three tested headline versions. A complete About Me rewrite. Profile optimization so recruiters actually find you. Before/after transformations that get 3-5x more profile views.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">03</div>
+        <h3>Salary Research Report</h3>
+        <p>Your target role. Your city. Anchor number, target number, walk-away number. With sources. So you walk into every negotiation knowing exactly what you're worth and what to ask for.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">04</div>
+        <h3>Target Companies List (50+)</h3>
+        <p>Not random companies from a Google search. 50+ companies actively hiring for YOUR role, in YOUR market, based on real job posting data. With hiring manager names and contact info where available.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">05</div>
+        <h3>Job Search Tracking System</h3>
+        <p>A system to manage applications, follow-ups, networking touches, and interview stages. No more "wait, did I apply there already?" chaos.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">06</div>
+        <h3>Cold Outreach Templates</h3>
+        <p>Email templates, LinkedIn DM scripts, connection request messages, and follow-up sequences. The exact messages that helped Blake land a job with 27 emails when 220 applications got him nothing.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">07</div>
+        <h3>Interview Prep Toolkit</h3>
+        <p>10-12 STAR stories customized to your experience. 15-20 likely interview questions with frameworks for answering them. A "silver bullet" thank-you email that hiring managers remember. Salary negotiation scripts word-for-word.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">08</div>
+        <h3>Eight Weekly Group Coaching Calls</h3>
+        <p>Live calls with me and the cohort every week for 8 weeks. Strategy, accountability, hot-seat coaching, and real-time problem-solving. This is where the magic happens. You're not doing this alone.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">09</div>
+        <h3>AI-Powered Career Toolkit</h3>
+        <p>I built an AI system that generates your entire personalized career strategy in under 2 hours. Everything from resume to salary research to outreach templates. It's the same approach I've always used, just 10x faster and more thorough. So I can spend all my time on the coaching, the strategy, and the human stuff.</p>
+      </div>
+
+      <div class="deliverable">
+        <div class="number">10</div>
+        <h3>Community Access</h3>
+        <p>A group of 10 professionals all going through the same thing. People who get it. People who'll celebrate your wins and pick you up when you're frustrated. Some of the strongest relationships my clients have made came from this.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY BIRD BONUSES -->
+  <section>
+    <div class="tag tag-green">Early Bird Bonuses</div>
+    <h2>Sign Up Before Launch, Get These Free</h2>
+    <div class="divider" style="background:#34d399;"></div>
+
+    <p>These aren't available after the program starts. Sign up now and you get both.</p>
+
+    <div class="bonus-grid">
+      <div class="bonus-card bonus-1on1">
+        <div class="bonus-label">Bonus 1</div>
+        <h3>Private 1:1 Strategy Session</h3>
+        <p>A dedicated one-on-one call with me before the program starts. We'll map out your situation, identify your biggest blockers, and build a personalized game plan so you hit the ground running on Day 1.</p>
+      </div>
+      <div class="bonus-card bonus-retreat">
+        <div class="bonus-label">Bonus 2</div>
+        <h3>Career Mastermind Retreat</h3>
+        <p>A full-day, in-person Career Mastermind Retreat in May (date TBD) at Go Place Spa in Toronto. Networking, strategy deep-dives, hands-on workshopping, and a room full of ambitious professionals. If you're in the GTA, this is a no-brainer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IS THIS RIGHT FOR YOU -->
+  <section>
+    <div class="tag">Good Fit?</div>
+    <h2>Is This Right for You?</h2>
+    <div class="divider"></div>
+
+    <div class="fit-grid">
+      <div class="fit-column fit-yes">
+        <h3>This is for you if:</h3>
+        <ul>
+          <li>You're a mid-career professional (5+ years) in Canada</li>
+          <li>You're actively job searching or about to start</li>
+          <li>You're stuck in a role that's going nowhere</li>
+          <li>You've been applying and hearing nothing back</li>
+          <li>You know you're worth more but can't break through</li>
+          <li>You're changing industries and need to reposition</li>
+          <li>You want accountability and a system, not just advice</li>
+        </ul>
+      </div>
+      <div class="fit-column fit-no">
+        <h3>This is NOT for you if:</h3>
+        <ul>
+          <li>You're looking for entry-level or internship roles</li>
+          <li>You want someone to apply to jobs for you (this is done-WITH-you, not done-FOR-you)</li>
+          <li>You're not willing to put in the work alongside the coaching</li>
+          <li>You're happy where you are and not looking to make a move</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section>
+    <div class="tag">Proof</div>
+    <h2>Real Clients. Real Results.</h2>
+    <div class="divider"></div>
+
+    <p>These aren't hypothetical. These are real people I've worked with.</p>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/HLQ4uncTZOw?si=J888m_4why7GG3Iz" title="Client Testimonials" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="name">Michael T.</div>
+        <div class="industry">Higher Education</div>
+        <div class="before">Looking for internal promotion</div>
+        <div class="after">Associate Director + $25,000 raise</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Laura S.</div>
+        <div class="industry">Nonprofit / International Dev</div>
+        <div class="before">Dream org was hiring</div>
+        <div class="after">Landed the role + $22,000/year increase (30%+)</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Blake M.</div>
+        <div class="industry">Digital Marketing</div>
+        <div class="before">220 applications, ~10 interviews, 0 offers</div>
+        <div class="after">27 emails, 13 replies, full-time role + $5K raise</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Kira H.</div>
+        <div class="industry">Software Engineering</div>
+        <div class="before">No real resume, low confidence</div>
+        <div class="after">$127K salary + 30 PTO days</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Tamara G.</div>
+        <div class="industry">Operations</div>
+        <div class="before">Self-improved resume, no interviews</div>
+        <div class="after">Multiple interviews + $20K raise + bonuses</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Jorge G.</div>
+        <div class="industry">Supply Chain</div>
+        <div class="before">12 months, 160 apps, 16 interviews, 0 offers</div>
+        <div class="after">Offer in 3 weeks + $6K above "final" offer</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Kristin D.</div>
+        <div class="industry">Business Strategy</div>
+        <div class="before">1 year unemployed</div>
+        <div class="after">Hired in 3 weeks (wrote her own job description)</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Sparsh K.</div>
+        <div class="industry">Customer Service / HR</div>
+        <div class="before">1+ year of frustration</div>
+        <div class="after">Hired in 30 days</div>
+      </div>
+      <div class="result-card">
+        <div class="name">Charla F.</div>
+        <div class="industry">Media / Advertising</div>
+        <div class="before">$90K salary</div>
+        <div class="after">~$260K/year (nearly 3x)</div>
+      </div>
+    </div>
+
+    <div class="aggregate">
+      <p><strong>200+ professionals coached.</strong> $5K-$170K salary gains. 70% faster job search. 98% client satisfaction.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="tag">The Program</div>
+    <h2>How It Works</h2>
+    <div class="divider"></div>
+
+    <p>The program covers everything you need to run a focused, strategic job search. Here's the ground we cover together:</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="phase">Foundation</div>
+        <div>
+          <div class="focus">Resume + Positioning</div>
+          <div class="desc">Your resume gets rebuilt from scratch. You learn to see and articulate your impact.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Strategy</div>
+        <div>
+          <div class="focus">Targeting + Research</div>
+          <div class="desc">Target companies, salary research, alternative job titles. Your search gets focused.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Visibility</div>
+        <div>
+          <div class="focus">LinkedIn + Branding</div>
+          <div class="desc">Profile overhaul. Headline, About, optimization. Recruiters start finding you.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Outreach</div>
+        <div>
+          <div class="focus">Emails + Networking</div>
+          <div class="desc">Email templates, DM scripts, networking strategy. You stop applying and start reaching.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Interview</div>
+        <div>
+          <div class="focus">Prep + Practice</div>
+          <div class="desc">STAR stories, custom questions, mock practice. You walk in confident.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Negotiation</div>
+        <div>
+          <div class="focus">Salary + Offers</div>
+          <div class="desc">Salary scripts, counter-offer strategy, walk-away numbers. You learn to ask.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Momentum</div>
+        <div>
+          <div class="focus">Pipeline + Follow-ups</div>
+          <div class="desc">Pipeline management, follow-ups, acceleration. The flywheel spins.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="phase">Close</div>
+        <div>
+          <div class="focus">Offers + Decisions</div>
+          <div class="desc">Offer evaluation, final negotiation support. You land it.</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Plus <strong class="white">8 weekly group coaching calls</strong> throughout. Strategy, accountability, hot-seat coaching, real-time problem-solving.</p>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="tag">Founding Member Rate</div>
+    <h2>Pricing</h2>
+    <div class="divider"></div>
+
+    <p>This is the founding cohort. First time I've ever run this program. You're getting in at the lowest price it will ever be. Future cohorts will be $3,497+.</p>
+
+    <div class="pricing-cards">
+      <div class="pricing-card featured">
+        <div class="label">Pay in Full</div>
+        <div class="price">$2,497</div>
+        <div class="detail">Best value. One payment. Done.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="label">3 Monthly Payments</div>
+        <div class="price">3 x $899</div>
+        <div class="detail">$2,697 total. Monthly over 3 months.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="label">Klarna Financing</div>
+        <div class="price">Up to 12 mo</div>
+        <div class="detail">Visa debit required. Pay on your schedule.</div>
+      </div>
+    </div>
+
+    <div class="pricing-math">
+      <p>$2,497 / 8 weeks = <strong>$312/week</strong></p>
+      <p>$312 / 7 days = <strong>$44/day</strong></p>
+      <p>The job you're targeting pays $10K-$25K more per year. Is <strong>$44/day for 8 weeks</strong> the thing standing between you and that?</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="tag">Common Questions</div>
+    <h2>FAQ</h2>
+    <div class="divider"></div>
+
+    <div class="faq-item">
+      <div class="question">"Is this right for me?"</div>
+      <p>If you're a mid-career professional (5+ years experience) who's job searching, thinking about a change, or stuck in a role that's going nowhere, yes. This is for managers, directors, individual contributors, and career changers who know they're worth more but can't seem to break through.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"What if I'm currently employed?"</div>
+      <p>Perfect. Half my clients are. The program is designed for busy professionals. One call per week, everything else on your schedule. The AI toolkit means we move fast.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"What if I don't land a job in 8 weeks?"</div>
+      <p>The program is about building a system that works, not just filling a seat. Some clients land in week 2. Some in week 10. The skills, resume, LinkedIn, and network you build last way beyond the 8 weeks. And the community doesn't disappear.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"I've used a career coach before and it didn't work."</div>
+      <p>Most career coaches give you generic advice and a template resume. I build everything custom for YOU, powered by an AI system that does in 2 hours what used to take 20. Then I coach you on strategy, not just deliverables. There's a reason my clients average $10K-$25K in salary gains.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"What industries do your clients work in?"</div>
+      <p>Tech, finance, healthcare, nonprofit, government, marketing, operations, supply chain, higher education. If you're a professional with 5+ years of experience, this works. The system adapts to your industry, not the other way around.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"Is this only for people in Toronto?"</div>
+      <p>Most of my clients are in the GTA, but the program is fully virtual. You can join from anywhere in Canada. The Career Mastermind Retreat is in Toronto (Go Place Spa), so locals get that extra in-person bonus. But the coaching, deliverables, and community work no matter where you are.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"What's the time commitment?"</div>
+      <p>One group call per week (60-90 minutes). Everything else is async and self-paced. The AI toolkit handles the heavy lifting on deliverables, so you're not spending 20 hours writing a resume. Most clients spend 3-5 hours per week total.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"Can I pay monthly?"</div>
+      <p>Yes. Pay in full for $2,497, use the 3-month payment plan (3 x $899), or finance through Klarna for up to 12 months. Visa debit required for Klarna.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"What if I'm changing industries?"</div>
+      <p>That's what a good chunk of the cohort is doing. The program helps you reposition your experience for a new field. We reframe your achievements, identify transferable skills, and build a narrative that makes the move make sense to hiring managers.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">"How is this different from LinkedIn Premium or a resume writer?"</div>
+      <p>LinkedIn Premium gives you InMail credits. A resume writer gives you a document. This program gives you the entire system: strategy, positioning, outreach, interview prep, negotiation coaching, and 8 weeks of live support. The average resume writer charges $300-$1,500 for one deliverable. You get 10+ deliverables, a full strategy, and ongoing coaching for $2,497. The ROI difference is 10-50x.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="tag tag-green">In Their Words</div>
+    <h2>What Past Clients Are Saying</h2>
+    <div class="divider" style="background:#34d399;"></div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <blockquote>"Working with Izzy was an absolute game changer. His guidance in narrowing my personal narrative from experience toward tangible quantified metrics and accomplishments gave me a significant edge in my interview and salary negotiations. I landed an Associate Director role and secured a $25K pay increase, far exceeding my expectations."</blockquote>
+        <div class="attribution">Michael T. <span class="industry">| Higher Education Administration</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Working with Izzy to apply to my dream job was one of the best decisions I ever made. He took the time to learn about my needs and supported me every step of the way. I landed the role and bumped my salary by $22,000 a year (more than a 30% increase!)."</blockquote>
+        <div class="attribution">Laura S. <span class="industry">| Nonprofit / International Development</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"After trying to transition into digital marketing and having applied to over 200 jobs, I'd only got 10 interviews, and no offers. When I started using the 'Izzy Method,' everything changed. I sent 27 targeted emails, got 3 responses with valuable industry advice, and landed multiple interviews, eventually leading to a full-time role. I also negotiated a $5,000 salary increase."</blockquote>
+        <div class="attribution">Blake M. <span class="industry">| Digital Marketing</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Before working with Izzy, I spent 12 months job searching. I applied to over 160 jobs. I had 16 interviews. But I never landed an offer. After joining Izzy's program, he helped me with the whole interview process. And today, I finally landed an offer. I even negotiated $6K increase on my initial offer (even after they said they couldn't go higher)."</blockquote>
+        <div class="attribution">Jorge G. <span class="industry">| Supply Chain / Food Manufacturing</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"I was feeling stuck in my job search despite my dedication and work ethic. With Izzy, I gained clarity, felt more confident, transformed my resume, and within weeks, I landed multiple interviews. I ultimately landed a role with a $20,000 salary increase + annual bonuses."</blockquote>
+        <div class="attribution">Tamara G. <span class="industry">| Operations / Administration</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"When I started working with Izzy, I was transitioning from freelancing to a full-time Software Engineering role and lacked confidence in self-promotion and negotiation. Together we refined my story, and his support empowered me to negotiate a strong counteroffer, securing $127K, good benefits, and 30 PTO days."</blockquote>
+        <div class="attribution">Kira H. <span class="industry">| Software Engineering</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"I was looking for full-time work for an entire year. After working with Izzy, I was employed in just three weeks. He advised me to act like a consultant and that mindset shift changed everything. I even wrote my own job description."</blockquote>
+        <div class="attribution">Kristin D. <span class="industry">| Business Strategy / Entrepreneurship</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"After over a year of frustration, I followed his advice exactly, and within 30 days, I had a job. The weekly group sessions kept me motivated, and Izzy's personalized approach made all the difference."</blockquote>
+        <div class="attribution">Sparsh K. <span class="industry">| Customer Service / HR</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Izzy is not just a career coach; he's a strategist for job searching. With his help, I built confidence, improved my personal brand, and negotiated a $20K salary increase. The return on investment is undeniable."</blockquote>
+        <div class="attribution">Julian P. <span class="industry">| Finance / AI Risk</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Izzy helped me craft my resume, refine my interview skills, and believe in my value as a developer. I woke up to interviews after applying with my new resume, and I negotiated $10K above the offer."</blockquote>
+        <div class="attribution">Septembre A. <span class="industry">| Front-End Web Development</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Izzy helped me rebuild my confidence and approach job searching with renewed energy. He helped me hone in on my strengths, leading me to receive three job offers. I negotiated a $10K raise and felt empowered in my abilities."</blockquote>
+        <div class="attribution">Wil G. <span class="industry">| Software Engineering (Frontend)</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"I received two job offers in a week and negotiated a 30% higher salary. The program works. I even recommended it to three people, and two of them found jobs."</blockquote>
+        <div class="attribution">Henrique P. <span class="industry">| Tech / Product</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Before reconnecting with Izzy, I applied for 600+ jobs but only landed three interviews. He refined my resume, quantified my achievements, and gave me tools to stand out. Things turned around rapidly. I signed an offer maintaining my salary without needing to take a pay cut."</blockquote>
+        <div class="attribution">Darin M. <span class="industry">| Tech Support / SaaS</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"When I needed a refresher on salary negotiation after working for myself for three years, Izzy helped me evaluate two opportunities, determine a realistic salary range, and prepare for negotiations. I accepted my dream role and negotiated a $10K bump on the initial offer."</blockquote>
+        <div class="attribution">Marsha D. <span class="industry">| Marketing / Innovation</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Izzy is no hype. This man is a real life wizard of 'work', and he's sensitive with a big ole heart. He is worth every penny. In fact he doesn't charge enough for what he does."</blockquote>
+        <div class="attribution">Kay W. <span class="industry">| Product Management</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Izzy's coaching didn't just help me get a job. It helped me reframe how I think about my career. I negotiated top pay, extra vacation, and found a role where I make a real difference every day."</blockquote>
+        <div class="attribution">Alison G. <span class="industry">| Nonprofit / Volunteer Management</span></div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Izzy is the most caring, supportive, and dedicated career coach I've ever worked with. He has not only transformed the way I apply for jobs, but also helped build my confidence. 10/10 would recommend."</blockquote>
+        <div class="attribution">Courtenay B. <span class="industry">| Product / Startups</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready?</h2>
+    <div class="divider" style="margin: 1rem auto 1.5rem;"></div>
+    <p style="color:#94a3c4; font-size:1.1rem;">Book a free 25-minute strategy call. No pressure. We'll talk about where you are, where you want to go, and whether this is the right fit.</p>
+    <a href="#" class="cta-button">Book Your Call</a>
+    <p class="closing">10 spots. May 4th. The founding cohort.</p>
+    <p style="margin-top:1.5rem; font-size:1.3rem;">May the Fourth be with you. &#x1F680;</p>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  const salarySlider = document.getElementById('calcSalary');
+  const monthsSlider = document.getElementById('calcMonths');
+  const salaryDisplay = document.getElementById('calcSalaryDisplay');
+  const monthsDisplay = document.getElementById('calcMonthsDisplay');
+  const monthlyEl = document.getElementById('calcMonthly');
+  const totalLostEl = document.getElementById('calcTotalLost');
+  const negGainEl = document.getElementById('calcNegGain');
+  const roiEl = document.getElementById('calcROI');
+  const descEl = document.getElementById('calcDesc');
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-CA');
+  }
+
+  function calcNegotiationGain(salary) {
+    // Scale from ~$3K at $40K to ~$25K at $300K, roughly 5-10% of salary
+    var pct = 0.05 + (salary - 40000) / (300000 - 40000) * 0.05;
+    return Math.round(salary * pct / 500) * 500;
+  }
+
+  function update() {
+    var salary = parseInt(salarySlider.value);
+    var months = parseInt(monthsSlider.value);
+
+    salaryDisplay.textContent = fmt(salary);
+    monthsDisplay.textContent = months + (months === 1 ? ' month' : ' months');
+
+    var monthly = salary / 12;
+    var totalLost = monthly * months;
+    var negGain = calcNegotiationGain(salary);
+    var programCost = 2497;
+    var totalReturn = monthly + negGain;
+    var roiMultiple = totalReturn / programCost;
+
+    monthlyEl.textContent = fmt(monthly);
+    totalLostEl.textContent = fmt(totalLost);
+    negGainEl.textContent = fmt(negGain);
+    roiEl.textContent = Math.round(roiMultiple) + 'x return';
+    descEl.textContent = 'You save ' + fmt(monthly) + ' in lost salary + gain ' + fmt(negGain) + ' in negotiation. That\u2019s ' + fmt(totalReturn) + ' back on a $2,497 investment.';
+  }
+
+  salarySlider.addEventListener('input', update);
+  monthsSlider.addEventListener('input', update);
+  update();
+})();
+</script>
+
+</body>
+</html>
