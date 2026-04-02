@@ -876,10 +876,33 @@
         </div>
       </div>
 
-      <div class="calc-roi">
-        <div class="roi-label">If you land just 1 month faster + negotiate</div>
-        <div class="roi-value" id="calcROI">8x return</div>
-        <p class="roi-desc" id="calcDesc">You save $8,333 in lost salary + gain $12,500 in negotiation. That's $20,833 back on a $2,497 investment.</p>
+      <div class="calc-roi" style="text-align:left;">
+        <p style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#5a6a8a; margin-bottom:1rem;">What searching alone actually costs you</p>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin-bottom:1.2rem;">
+          <div style="background:rgba(255,255,255,0.04); border-radius:12px; padding:1rem; text-align:center;">
+            <div style="font-size:0.7rem; font-weight:600; color:#7b8db5; margin-bottom:0.4em;">3 MONTHS</div>
+            <div style="font-size:1.4rem; font-weight:800; color:#f472b6;" id="cost3mo">$25,000</div>
+            <div style="font-size:0.75rem; color:#5a6a8a; margin-top:0.3em;">lost salary</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border-radius:12px; padding:1rem; text-align:center;">
+            <div style="font-size:0.7rem; font-weight:600; color:#7b8db5; margin-bottom:0.4em;">6 MONTHS</div>
+            <div style="font-size:1.4rem; font-weight:800; color:#f472b6;" id="cost6mo">$50,000</div>
+            <div style="font-size:0.75rem; color:#5a6a8a; margin-top:0.3em;">lost salary</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border-radius:12px; padding:1rem; text-align:center;">
+            <div style="font-size:0.7rem; font-weight:600; color:#7b8db5; margin-bottom:0.4em;">12 MONTHS</div>
+            <div style="font-size:1.4rem; font-weight:800; color:#f472b6;" id="cost12mo">$100,000</div>
+            <div style="font-size:0.75rem; color:#5a6a8a; margin-top:0.3em;">lost salary</div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:#8a9bbd; margin-bottom:0.8em;">Jorge searched for <strong style="color:#e8ecf4;">12 months</strong>. 160 applications. 16 interviews. Zero offers. Kristin was unemployed for <strong style="color:#e8ecf4;">a full year</strong>. Darin sent <strong style="color:#e8ecf4;">600+ applications</strong> with 3 interviews. Victor applied to <strong style="color:#e8ecf4;">500+ jobs</strong> over 11 months.</p>
+        <p style="font-size:0.85rem; color:#8a9bbd; margin-bottom:1rem;">Every one of them landed within <strong style="color:#34d399;">weeks</strong> of joining the program. Not months. Weeks.</p>
+
+        <div style="background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.2); border-radius:12px; padding:1.2rem; text-align:center;">
+          <div style="font-size:0.75rem; color:#94a3c4; margin-bottom:0.3em;">If you land just 1 month faster + negotiate your offer</div>
+          <div style="font-size:1.8rem; font-weight:800; color:#34d399;" id="calcROI">8x return</div>
+          <p style="font-size:0.85rem; color:#8a9bbd; margin-top:0.5em; margin-bottom:0;" id="calcDesc">You save $8,333 in lost salary + gain $12,500 in negotiation. That's $20,833 back on a $2,497 investment.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1428,6 +1451,9 @@
   const negGainEl = document.getElementById('calcNegGain');
   const roiEl = document.getElementById('calcROI');
   const descEl = document.getElementById('calcDesc');
+  const cost3moEl = document.getElementById('cost3mo');
+  const cost6moEl = document.getElementById('cost6mo');
+  const cost12moEl = document.getElementById('cost12mo');
 
   function fmt(n) {
     return '$' + Math.round(n).toLocaleString('en-CA');
@@ -1456,6 +1482,11 @@
     monthlyEl.textContent = fmt(monthly);
     totalLostEl.textContent = fmt(totalLost);
     negGainEl.textContent = fmt(negGain);
+
+    cost3moEl.textContent = fmt(monthly * 3);
+    cost6moEl.textContent = fmt(monthly * 6);
+    cost12moEl.textContent = fmt(monthly * 12);
+
     roiEl.textContent = Math.round(roiMultiple) + 'x return';
     descEl.textContent = 'You save ' + fmt(monthly) + ' in lost salary + gain ' + fmt(negGain) + ' in negotiation. That\u2019s ' + fmt(totalReturn) + ' back on a $2,497 investment.';
   }
