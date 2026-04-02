@@ -269,11 +269,40 @@
     border-radius: 14px;
     padding: 1.4rem 1.6rem;
     transition: border-color 0.2s;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
   }
 
   .deliverable:hover {
     border-color: rgba(79,143,255,0.2);
   }
+
+  .deliverable-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .deliverable-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+    fill: none;
+    stroke: currentColor;
+  }
+
+  .deliverable-icon.icon-blue { background: rgba(79,143,255,0.12); color: #4f8fff; }
+  .deliverable-icon.icon-green { background: rgba(52,211,153,0.12); color: #34d399; }
+  .deliverable-icon.icon-gold { background: rgba(251,191,36,0.12); color: #fbbf24; }
+  .deliverable-icon.icon-pink { background: rgba(244,114,182,0.12); color: #f472b6; }
+
+  .deliverable-content { flex: 1; }
 
   .deliverable .number {
     font-size: 0.75rem;
@@ -479,6 +508,29 @@
     border-radius: 12px;
     border-left: 3px solid #4f8fff;
   }
+
+  .timeline-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    fill: none;
+    stroke: currentColor;
+  }
+
+  .timeline-icon.icon-blue { background: rgba(79,143,255,0.12); color: #4f8fff; }
+  .timeline-icon.icon-green { background: rgba(52,211,153,0.12); color: #34d399; }
+  .timeline-icon.icon-gold { background: rgba(251,191,36,0.12); color: #fbbf24; }
+  .timeline-icon.icon-pink { background: rgba(244,114,182,0.12); color: #f472b6; }
 
   .timeline-item .phase {
     font-weight: 700;
@@ -695,6 +747,12 @@
 
     .timeline-item { background: #f9fafb; border-left-color: #2563eb; }
 
+    .deliverable-icon, .timeline-icon { background: #eef2ff !important; }
+    .deliverable-icon.icon-blue, .timeline-icon.icon-blue { color: #2563eb; }
+    .deliverable-icon.icon-green, .timeline-icon.icon-green { color: #059669; }
+    .deliverable-icon.icon-gold, .timeline-icon.icon-gold { color: #d97706; }
+    .deliverable-icon.icon-pink, .timeline-icon.icon-pink { color: #db2777; }
+
     .cost-table td:last-child, .cost-table tr.total td:last-child { color: #db2777; }
     .cost-table th, .cost-table td { border-bottom-color: #e5e7eb; }
     .cost-table tr.total td { border-top-color: #f9a8d4; }
@@ -739,8 +797,8 @@
     <div class="tag">Launching May 4, 2026</div>
     <h1>May the Fourth<br>Be With You</h1>
     <p class="subtitle">8-Week Group Coaching Program</p>
-    <p class="location">Based in Toronto. Built for Canadian professionals.</p>
-    <p class="spots">10 spots. Founding cohort. The lowest price this will ever be.</p>
+    <p class="location">Virtual program. Open to professionals across Canada and the US.</p>
+    <p class="spots">15 spots. Founding cohort. The lowest price this will ever be.</p>
   </section>
 
   <!-- THE PROBLEM -->
@@ -836,63 +894,113 @@
 
     <div class="deliverable-grid">
       <div class="deliverable">
-        <div class="number">01</div>
-        <h3>Done-For-You Resume Rewrite</h3>
-        <p>Your resume gets rebuilt from scratch with 15-20 quantified achievements in the CAR format (Challenge, Action, Result). Not "managed a team." More like "Led team of 5 that delivered $2M project 3 weeks early, saving $150K in contractor costs." The version that makes hiring managers stop scrolling.</p>
+        <div class="deliverable-icon icon-blue">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">01</div>
+          <h3>Done-For-You Resume Rewrite</h3>
+          <p>Your resume rebuilt from scratch with 15-20 quantified achievements in CAR format (Challenge, Action, Result). "Led team of 5 that delivered $2M project 3 weeks early, saving $150K in contractor costs." The version that makes hiring managers stop scrolling.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">02</div>
-        <h3>LinkedIn Overhaul</h3>
-        <p>Three tested headline versions. A complete About Me rewrite. Profile optimization so recruiters actually find you. Before/after transformations that get 3-5x more profile views.</p>
+        <div class="deliverable-icon icon-green">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">02</div>
+          <h3>LinkedIn Overhaul</h3>
+          <p>Three tested headline versions. Complete About Me rewrite. Profile optimization so recruiters actually find you. Before/after transformations that get 3-5x more profile views.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">03</div>
-        <h3>Salary Research Report</h3>
-        <p>Your target role. Your city. Anchor number, target number, walk-away number. With sources. So you walk into every negotiation knowing exactly what you're worth and what to ask for.</p>
+        <div class="deliverable-icon icon-gold">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">03</div>
+          <h3>Salary Research Report</h3>
+          <p>Your target role. Your city. Anchor number, target number, walk-away number. All sourced. You walk into every negotiation knowing exactly what you're worth and what to ask for.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">04</div>
-        <h3>Target Companies List (50+)</h3>
-        <p>Not random companies from a Google search. 50+ companies actively hiring for YOUR role, in YOUR market, based on real job posting data. With hiring manager names and contact info where available.</p>
+        <div class="deliverable-icon icon-pink">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">04</div>
+          <h3>Target Companies List (50+)</h3>
+          <p>50+ companies actively hiring for YOUR role, in YOUR market, based on real job posting data. With hiring manager names and contact info where available.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">05</div>
-        <h3>Job Search Tracking System</h3>
-        <p>A system to manage applications, follow-ups, networking touches, and interview stages. No more "wait, did I apply there already?" chaos.</p>
+        <div class="deliverable-icon icon-blue">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">05</div>
+          <h3>Job Search Tracking System</h3>
+          <p>Manage applications, follow-ups, networking touches, and interview stages. No more "wait, did I apply there already?" chaos.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">06</div>
-        <h3>Cold Outreach Templates</h3>
-        <p>Email templates, LinkedIn DM scripts, connection request messages, and follow-up sequences. The exact messages that helped Blake land a job with 27 emails when 220 applications got him nothing.</p>
+        <div class="deliverable-icon icon-green">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">06</div>
+          <h3>Cold Outreach Templates</h3>
+          <p>Email templates, LinkedIn DM scripts, connection messages, and follow-up sequences. The exact messages that helped Blake land a job with 27 emails when 220 applications got him nothing.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">07</div>
-        <h3>Interview Prep Toolkit</h3>
-        <p>10-12 STAR stories customized to your experience. 15-20 likely interview questions with frameworks for answering them. A "silver bullet" thank-you email that hiring managers remember. Salary negotiation scripts word-for-word.</p>
+        <div class="deliverable-icon icon-gold">
+          <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">07</div>
+          <h3>Interview Prep Toolkit</h3>
+          <p>10-12 STAR stories customized to your experience. 15-20 likely interview questions with frameworks. A "silver bullet" thank-you email hiring managers remember. Salary negotiation scripts word-for-word.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">08</div>
-        <h3>Eight Weekly Group Coaching Calls</h3>
-        <p>Live calls with me and the cohort every week for 8 weeks. Strategy, accountability, hot-seat coaching, and real-time problem-solving. This is where the magic happens. You're not doing this alone.</p>
+        <div class="deliverable-icon icon-pink">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">08</div>
+          <h3>8 Group Coaching Calls</h3>
+          <p>Live calls with me and the cohort every week for 8 weeks. Strategy, accountability, hot-seat coaching, and real-time problem-solving. This is where the magic happens. You're not doing this alone.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">09</div>
-        <h3>AI-Powered Career Toolkit</h3>
-        <p>I built an AI system that generates your entire personalized career strategy in under 2 hours. Everything from resume to salary research to outreach templates. It's the same approach I've always used, just 10x faster and more thorough. So I can spend all my time on the coaching, the strategy, and the human stuff.</p>
+        <div class="deliverable-icon icon-blue">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">09</div>
+          <h3>AI-Powered Career Toolkit</h3>
+          <p>I built an AI system that generates your entire personalized career strategy in under 2 hours. Resume, salary research, outreach templates, everything. 10x faster and more thorough, so I spend all my time on coaching, strategy, and the human stuff.</p>
+        </div>
       </div>
 
       <div class="deliverable">
-        <div class="number">10</div>
-        <h3>Community Access</h3>
-        <p>A group of 10 professionals all going through the same thing. People who get it. People who'll celebrate your wins and pick you up when you're frustrated. Some of the strongest relationships my clients have made came from this.</p>
+        <div class="deliverable-icon icon-green">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="deliverable-content">
+          <div class="number">10</div>
+          <h3>Community Access</h3>
+          <p>A group of 15 professionals all going through the same thing. People who get it. People who'll celebrate your wins and pick you up when you're frustrated. Some of the strongest relationships my clients have made came from this.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -913,8 +1021,8 @@
       </div>
       <div class="bonus-card bonus-retreat">
         <div class="bonus-label">Bonus 2</div>
-        <h3>Career Mastermind Retreat</h3>
-        <p>A full-day, in-person Career Mastermind Retreat in May (date TBD) at Go Place Spa in Toronto. Networking, strategy deep-dives, hands-on workshopping, and a room full of ambitious professionals. If you're in the GTA, this is a no-brainer.</p>
+        <h3>GoPlace VIP Mastermind Retreat</h3>
+        <p>A full-day VIP Mastermind Retreat in late May at GoPlace Spa in Markham. Deep-dive strategy sessions, hands-on career workshopping, networking with the full cohort, and spa access. This is the one in-person event of the program. If you can make it, it's worth the trip.</p>
       </div>
     </div>
   </section>
@@ -929,7 +1037,7 @@
       <div class="fit-column fit-yes">
         <h3>This is for you if:</h3>
         <ul>
-          <li>You're a mid-career professional (5+ years) in Canada</li>
+          <li>You're a mid-career professional (5+ years)</li>
           <li>You're actively job searching or about to start</li>
           <li>You're stuck in a role that's going nowhere</li>
           <li>You've been applying and hearing nothing back</li>
@@ -1034,6 +1142,9 @@
 
     <div class="timeline">
       <div class="timeline-item">
+        <div class="timeline-icon icon-blue">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
         <div class="phase">Foundation</div>
         <div>
           <div class="focus">Resume + Positioning</div>
@@ -1041,6 +1152,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-gold">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
         <div class="phase">Strategy</div>
         <div>
           <div class="focus">Targeting + Research</div>
@@ -1048,6 +1162,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-green">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
         <div class="phase">Visibility</div>
         <div>
           <div class="focus">LinkedIn + Branding</div>
@@ -1055,6 +1172,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-pink">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
         <div class="phase">Outreach</div>
         <div>
           <div class="focus">Emails + Networking</div>
@@ -1062,6 +1182,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-blue">
+          <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
         <div class="phase">Interview</div>
         <div>
           <div class="focus">Prep + Practice</div>
@@ -1069,6 +1192,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-gold">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
         <div class="phase">Negotiation</div>
         <div>
           <div class="focus">Salary + Offers</div>
@@ -1076,6 +1202,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-green">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
         <div class="phase">Momentum</div>
         <div>
           <div class="focus">Pipeline + Follow-ups</div>
@@ -1083,6 +1212,9 @@
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-icon icon-green">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
         <div class="phase">Close</div>
         <div>
           <div class="focus">Offers + Decisions</div>
@@ -1135,7 +1267,7 @@
 
     <div class="faq-item">
       <div class="question">"Is this right for me?"</div>
-      <p>If you're a mid-career professional (5+ years experience) who's job searching, thinking about a change, or stuck in a role that's going nowhere, yes. This is for managers, directors, individual contributors, and career changers who know they're worth more but can't seem to break through.</p>
+      <p>If you're a mid-career professional (5+ years experience) who's job searching, thinking about a change, or stuck in a role that's going nowhere, yes. This is for managers, directors, individual contributors, and career changers across Canada and the US who know they're worth more but can't seem to break through.</p>
     </div>
 
     <div class="faq-item">
@@ -1159,8 +1291,8 @@
     </div>
 
     <div class="faq-item">
-      <div class="question">"Is this only for people in Toronto?"</div>
-      <p>Most of my clients are in the GTA, but the program is fully virtual. You can join from anywhere in Canada. The Career Mastermind Retreat is in Toronto (Go Place Spa), so locals get that extra in-person bonus. But the coaching, deliverables, and community work no matter where you are.</p>
+      <div class="question">"Can I join from outside Toronto?"</div>
+      <p>Yes. The program is fully virtual. You can join from anywhere in Canada or the US. The GoPlace VIP Mastermind Retreat is in-person in Markham, Ontario (late May), but it's optional. The coaching, deliverables, and community work no matter where you are.</p>
     </div>
 
     <div class="faq-item">
@@ -1192,87 +1324,87 @@
 
     <div class="testimonials-grid">
       <div class="testimonial">
-        <blockquote>"Working with Izzy was an absolute game changer. His guidance in narrowing my personal narrative from experience toward tangible quantified metrics and accomplishments gave me a significant edge in my interview and salary negotiations. I landed an Associate Director role and secured a $25K pay increase, far exceeding my expectations."</blockquote>
+        <blockquote>"Working with Izzy was an absolute game changer. His guidance in narrowing my personal narrative from experience toward tangible, quantified metrics and accomplishments gave me a significant edge in my interview and salary negotiations. With his help, I landed an internal Associate Director role and <strong class="white">secured a $25K pay increase</strong>, far exceeding my expectations."</blockquote>
         <div class="attribution">Michael T. <span class="industry">| Higher Education Administration</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Working with Izzy to apply to my dream job was one of the best decisions I ever made. He took the time to learn about my needs and supported me every step of the way. I landed the role and bumped my salary by $22,000 a year (more than a 30% increase!)."</blockquote>
+        <blockquote>"Izzy's strategies for job search success are the real deal. I started working with Izzy the minute I saw that my dream organization was hiring. Izzy took the time to learn about my professional experiences and supported me every step of the way, including demonstrating my value, preparing for the interview, and sending an impactful follow up email. <strong class="white">I landed a fantastic role and bumped my salary by $22,000 a year</strong> (more than a 30% increase!). Working with Izzy was one of the best decisions I ever made."</blockquote>
         <div class="attribution">Laura S. <span class="industry">| Nonprofit / International Development</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"After trying to transition into digital marketing and having applied to over 200 jobs, I'd only got 10 interviews, and no offers. When I started using the 'Izzy Method,' everything changed. I sent 27 targeted emails, got 3 responses with valuable industry advice, and landed multiple interviews, eventually leading to a full-time role. I also negotiated a $5,000 salary increase."</blockquote>
+        <blockquote>"Before I tried the Izzy method, I could safely guess I applied for somewhere in between 160-220 jobs, and got around 10 interviews - obviously, none of them led to a job. With the Izzy method, <strong class="white">I sent out 27 emails in total. 13 replied.</strong> From that, I had 1 person who gave me industry advice. I had three people who gave me calls to assess me for a role. Yesterday, a digital marketing company I want to work with offered me a full-time role. Thanks again Izzy! You're a rockstar."</blockquote>
         <div class="attribution">Blake M. <span class="industry">| Digital Marketing</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Before working with Izzy, I spent 12 months job searching. I applied to over 160 jobs. I had 16 interviews. But I never landed an offer. After joining Izzy's program, he helped me with the whole interview process. And today, I finally landed an offer. I even negotiated $6K increase on my initial offer (even after they said they couldn't go higher)."</blockquote>
+        <blockquote>"Before working with Izzy, I spent 12 months job searching. I applied to over 160 jobs. I had 16 interviews... But I never landed an offer. After joining Izzy's program, he helped me with the whole interview process. Before, during and after the interview. And today, I finally landed an offer. With Izzy's motivation, strategies and help, I even <strong class="white">negotiated $6K increase on my initial offer</strong> (even after they said there they couldn't go higher)."</blockquote>
         <div class="attribution">Jorge G. <span class="industry">| Supply Chain / Food Manufacturing</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"I was feeling stuck in my job search despite my dedication and work ethic. With Izzy, I gained clarity, felt more confident, transformed my resume, and within weeks, I landed multiple interviews. I ultimately landed a role with a $20,000 salary increase + annual bonuses."</blockquote>
+        <blockquote>"Izzy helped me craft my resume, refine my interview approach, and reduce the noise of conflicting job search advice. Thanks to his support, I not only gained a job but also the confidence and clarity to succeed in today's competitive market. The accountability aspect was phenomenal — having support from both Izzy and the group made all the difference. <strong class="white">If you're stuck, Izzy is the answer — 10 out of 10, sign up today!</strong>"</blockquote>
         <div class="attribution">Tamara G. <span class="industry">| Operations / Administration</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"When I started working with Izzy, I was transitioning from freelancing to a full-time Software Engineering role and lacked confidence in self-promotion and negotiation. Together we refined my story, and his support empowered me to negotiate a strong counteroffer, securing $127K, good benefits, and 30 PTO days."</blockquote>
+        <blockquote>"Izzy helped me overcome my discomfort with self-promotion and understand how to present my skills effectively. From identifying the right roles to negotiating a better offer, I felt supported every step of the way. <strong class="white">The fee I paid Izzy more than made up for the time and effort I would have spent figuring it out alone</strong> — and I ended up with a much better result!"</blockquote>
         <div class="attribution">Kira H. <span class="industry">| Software Engineering</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"I was looking for full-time work for an entire year. After working with Izzy, I was employed in just three weeks. He advised me to act like a consultant and that mindset shift changed everything. I even wrote my own job description."</blockquote>
+        <blockquote>"Izzy's approach isn't just about landing a job — it's about understanding your value and learning how to communicate it authentically. The strategies I learned not only helped me <strong class="white">get hired in three weeks after a year of unemployment</strong> but have also transformed how I approach my career. Izzy is a game-changer."</blockquote>
         <div class="attribution">Kristin D. <span class="industry">| Business Strategy / Entrepreneurship</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"After over a year of frustration, I followed his advice exactly, and within 30 days, I had a job. The weekly group sessions kept me motivated, and Izzy's personalized approach made all the difference."</blockquote>
+        <blockquote>"Izzy helped me believe in myself and present my best to the world. After over a year of frustration, I followed his advice exactly — and <strong class="white">within a month, I had a job</strong>. The weekly group sessions kept me motivated, and Izzy's personalized approach made all the difference. Trust his process and put in the effort — you won't regret it."</blockquote>
         <div class="attribution">Sparsh K. <span class="industry">| Customer Service / HR</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Izzy is not just a career coach; he's a strategist for job searching. With his help, I built confidence, improved my personal brand, and negotiated a $20K salary increase. The return on investment is undeniable."</blockquote>
+        <blockquote>"Izzy is not just a career coach; he's a strategist for job searching. His program is tailored to help you succeed at your goals. With his help, I built confidence, improved my personal brand, and <strong class="white">negotiated a $20K salary increase</strong>. The return on investment is undeniable."</blockquote>
         <div class="attribution">Julian P. <span class="industry">| Finance / AI Risk</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Izzy helped me craft my resume, refine my interview skills, and believe in my value as a developer. I woke up to interviews after applying with my new resume, and I negotiated $10K above the offer."</blockquote>
+        <blockquote>"Izzy helped me craft my resume, refine my interview skills, and believe in my value as a developer. I woke up to interviews after applying with my new resume, and I <strong class="white">negotiated $10K above the offer</strong>. Thanks to Izzy, I feel confident and ready to grow in this exciting role."</blockquote>
         <div class="attribution">Septembre A. <span class="industry">| Front-End Web Development</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Izzy helped me rebuild my confidence and approach job searching with renewed energy. He helped me hone in on my strengths, leading me to receive three job offers. I negotiated a $10K raise and felt empowered in my abilities."</blockquote>
+        <blockquote>"Izzy helped me rebuild my confidence and approach job searching with renewed energy and focus after being recently unemployed. He helped me hone in on my strengths and communicate them effectively, leading me to <strong class="white">receive three job offers</strong>. With Izzy's guidance, I negotiated a $10K raise and felt empowered and confident in my abilities."</blockquote>
         <div class="attribution">Wil G. <span class="industry">| Software Engineering (Frontend)</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"I received two job offers in a week and negotiated a 30% higher salary. The program works. I even recommended it to three people, and two of them found jobs."</blockquote>
+        <blockquote>"Izzy helped me gain confidence and present my achievements effectively. I received <strong class="white">two job offers in a week and negotiated a 30% higher salary</strong>. The program works — I even recommended it to three people, and two of them found jobs. Izzy is not just a coach; he's a true partner in your success."</blockquote>
         <div class="attribution">Henrique P. <span class="industry">| Tech / Product</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Before reconnecting with Izzy, I applied for 600+ jobs but only landed three interviews. He refined my resume, quantified my achievements, and gave me tools to stand out. Things turned around rapidly. I signed an offer maintaining my salary without needing to take a pay cut."</blockquote>
+        <blockquote>"Before reconnecting with Izzy, I applied for <strong class="white">600+ jobs but only landed three interviews</strong>. He refined my resume, quantified my achievements, and gave me tools to stand out. Things turned around rapidly. I signed an offer maintaining my salary without needing to take a pay cut."</blockquote>
         <div class="attribution">Darin M. <span class="industry">| Tech Support / SaaS</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"When I needed a refresher on salary negotiation after working for myself for three years, Izzy helped me evaluate two opportunities, determine a realistic salary range, and prepare for negotiations. I accepted my dream role and negotiated a $10K bump on the initial offer."</blockquote>
+        <blockquote>"When I needed a refresher on salary negotiation after working for myself for three years, Izzy helped me evaluate two exciting opportunities, determine a realistic salary range, and prepare for negotiations. With Izzy's guidance, I accepted my dream tech marketing role and even <strong class="white">negotiated a 10K bump on the initial offer</strong>."</blockquote>
         <div class="attribution">Marsha D. <span class="industry">| Marketing / Innovation</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Izzy is no hype. This man is a real life wizard of 'work', and he's sensitive with a big ole heart. He is worth every penny. In fact he doesn't charge enough for what he does."</blockquote>
+        <blockquote>"Izzy is no hype. This man is a real life wizard of 'work', and he's sensitive with a big ole heart. <strong class="white">He is worth every penny. In fact he doesn't charge enough for what he does.</strong> He's leveraging technology in ways most coaches don't even know HOW TO use yet. If and when his prices go up it will be fair and overdue — so get in now, while you still can."</blockquote>
         <div class="attribution">Kay W. <span class="industry">| Product Management</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Izzy's coaching didn't just help me get a job. It helped me reframe how I think about my career. I negotiated top pay, extra vacation, and found a role where I make a real difference every day."</blockquote>
+        <blockquote>"Izzy's coaching didn't just help me get a job — it helped me reframe how I think about my career. I <strong class="white">negotiated top pay, extra vacation</strong>, and found a role where I make a real difference every day."</blockquote>
         <div class="attribution">Alison G. <span class="industry">| Nonprofit / Volunteer Management</span></div>
       </div>
 
       <div class="testimonial">
-        <blockquote>"Izzy is the most caring, supportive, and dedicated career coach I've ever worked with. He has not only transformed the way I apply for jobs, but also helped build my confidence. 10/10 would recommend."</blockquote>
+        <blockquote>"Izzy is the most caring, supportive, and dedicated career coach I've ever worked with. He has not only <strong class="white">transformed the way I apply for jobs</strong>, but also helped build my confidence. 10/10 would recommend."</blockquote>
         <div class="attribution">Courtenay B. <span class="industry">| Product / Startups</span></div>
       </div>
     </div>
@@ -1284,7 +1416,7 @@
     <div class="divider" style="margin: 1rem auto 1.5rem;"></div>
     <p style="color:#94a3c4; font-size:1.1rem;">Book a free 25-minute strategy call. No pressure. We'll talk about where you are, where you want to go, and whether this is the right fit.</p>
     <a href="#" class="cta-button">Book Your Call</a>
-    <p class="closing">10 spots. May 4th. The founding cohort.</p>
+    <p class="closing">15 spots. May 4th. The founding cohort.</p>
     <p style="margin-top:1.5rem; font-size:1.3rem;">May the Fourth be with you. &#x1F680;</p>
   </section>
 
